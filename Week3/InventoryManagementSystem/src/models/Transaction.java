@@ -1,6 +1,5 @@
 package models;
 
-import java.sql.Timestamp;
 import java.time.LocalDate;
 
 public class Transaction {

@@ -1,8 +1,6 @@
 package models;
 
-import java.sql.Timestamp;
 import java.time.LocalDate;
-import java.util.Locale;
 
 public class InventoryItem {
     private static int idIncrement = 1;

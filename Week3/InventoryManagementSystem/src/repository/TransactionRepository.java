@@ -1,6 +1,5 @@
 package repository;
 
-import models.ClubMember;
 import models.Transaction;
 
 import java.util.HashMap;

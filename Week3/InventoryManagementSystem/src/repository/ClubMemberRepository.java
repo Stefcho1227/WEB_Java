@@ -1,7 +1,6 @@
 package repository;
 
 import models.ClubMember;
-import models.InventoryItem;
 
 import java.util.HashMap;
 import java.util.List;
