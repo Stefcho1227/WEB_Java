@@ -10,6 +10,7 @@ import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class InventoryServiceImpl implements InventoryService {
@@ -38,7 +39,19 @@ public class InventoryServiceImpl implements InventoryService {
     }
 
     @Override
-    public boolean updateItem(InventoryItem updatedItem) {
+    public boolean updateItem(Integer id, String name, String description, int quantity,
+                              ItemCategory category, boolean borrowable, String serialNumber) {
+        Optional<InventoryItem> foundItem = inventoryItemRepository.getItemById(id);
+        if(foundItem.isPresent()){
+            InventoryItem item = foundItem.get();
+            item.setName(name);
+            item.setDescription(description);
+            item.setQuantity(quantity);
+            item.setCategory(category);
+            item.setBorrowable(borrowable);
+            item.setSerialNumber(serialNumber);
+            return inventoryItemRepository.updateItem(item);
+        }
         return false;
     }
 }

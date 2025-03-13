@@ -31,10 +31,13 @@ public class InventoryItemRepository {
     public List<InventoryItem> getAllItems() {
         return itemTable.values().stream().toList();
     }
-    public InventoryItem updateItemById(Integer id, InventoryItem updatedItem){
-        if (itemTable.values().stream().noneMatch(i -> i.getId() == id)){
-            throw new IllegalArgumentException(String.format("Item with id %s not found in DB", id));
+    public boolean updateItem(InventoryItem updatedItem){
+        if (itemTable.values().stream().noneMatch(i -> i.getId() == updatedItem.getId())){
+            return false;
         }
-        return itemTable.put(id, updatedItem);
+        else {
+            itemTable.put(updatedItem.getId(), updatedItem);
+            return true;
+        }
     }
 }

@@ -1,18 +1,19 @@
 package models;
 
 import java.sql.Timestamp;
+import java.time.LocalDate;
 
 public class Transaction {
     private static int idIncrement = 1;
     private int id;
     private ClubMember member;
     private InventoryItem item;
-    private Timestamp borrowedDate;
-    private Timestamp dueDate;
+    private LocalDate borrowedDate;
+    private LocalDate dueDate;
     private Boolean returned;
 
-    public Transaction(ClubMember member, InventoryItem item, Timestamp borrowedDate,
-                       Timestamp dueDate, Boolean returned) {
+    public Transaction(ClubMember member, InventoryItem item, LocalDate borrowedDate,
+                       LocalDate dueDate, Boolean returned) {
         id = idIncrement++;
         this.member = member;
         this.item = item;
@@ -45,19 +46,19 @@ public class Transaction {
         this.item = item;
     }
 
-    public Timestamp getBorrowedDate() {
+    public LocalDate getBorrowedDate() {
         return borrowedDate;
     }
 
-    public void setBorrowedDate(Timestamp borrowedDate) {
+    public void setBorrowedDate(LocalDate borrowedDate) {
         this.borrowedDate = borrowedDate;
     }
 
-    public Timestamp getDueDate() {
+    public LocalDate getDueDate() {
         return dueDate;
     }
 
-    public void setDueDate(Timestamp dueDate) {
+    public void setDueDate(LocalDate dueDate) {
         this.dueDate = dueDate;
     }
 
