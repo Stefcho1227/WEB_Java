@@ -99,4 +99,16 @@ public class InventoryItem {
     public void setDate(LocalDate date) {
         this.date = date;
     }
+
+    @Override
+    public String toString() {
+        return String.format("InventoryItem name='" + name +
+                ", description='" + description +
+                ", quantity=" + quantity +
+                ", serialNumber='" + serialNumber +
+                ", measurements='" + measurements +
+                ", category name =" + category.getName() +
+                ", borrowable=" + borrowable +
+                ", date=" + date);
+    }
 }
