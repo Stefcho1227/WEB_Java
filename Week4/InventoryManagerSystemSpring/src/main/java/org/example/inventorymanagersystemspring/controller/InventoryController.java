@@ -1,18 +1,19 @@
 package org.example.inventorymanagersystemspring.controller;
 
-import models.InventoryItem;
-import models.ItemCategory;
-import service.InventoryService;
+import org.example.inventorymanagersystemspring.models.InventoryItem;
+import org.example.inventorymanagersystemspring.models.ItemCategory;
+import org.example.inventorymanagersystemspring.service.InventoryService;
+import org.springframework.stereotype.Controller;
 
 import java.util.List;
-
+@Controller
 public class InventoryController {
     private final InventoryService inventoryService;
 
     public InventoryController(InventoryService inventoryService) {
         this.inventoryService = inventoryService;
     }
-    public void displayItems(){
+    public void displayAllItems(){
         List<InventoryItem> items = inventoryService.getAllItems();
         if(items.isEmpty()){
             System.out.println("No items available");

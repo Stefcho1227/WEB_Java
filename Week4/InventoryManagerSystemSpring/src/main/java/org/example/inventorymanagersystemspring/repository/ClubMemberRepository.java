@@ -1,6 +1,6 @@
 package org.example.inventorymanagersystemspring.repository;
 
-import models.ClubMember;
+import org.example.inventorymanagersystemspring.models.ClubMember;
 
 import java.util.HashMap;
 import java.util.List;

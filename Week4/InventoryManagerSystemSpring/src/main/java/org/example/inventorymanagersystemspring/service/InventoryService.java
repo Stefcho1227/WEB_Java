@@ -1,10 +1,10 @@
 package org.example.inventorymanagersystemspring.service;
 
-import models.InventoryItem;
-import models.ItemCategory;
+import org.example.inventorymanagersystemspring.models.InventoryItem;
+import org.example.inventorymanagersystemspring.models.ItemCategory;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-
 public interface InventoryService {
     List<InventoryItem> getAllItems();
     void addItem(String name, String description, int quantity, String unit, ItemCategory category,

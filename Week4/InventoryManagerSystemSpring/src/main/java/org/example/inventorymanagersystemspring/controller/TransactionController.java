@@ -1,7 +1,7 @@
 package org.example.inventorymanagersystemspring.controller;
 
-import models.Transaction;
-import service.TransactionService;
+import org.example.inventorymanagersystemspring.models.Transaction;
+import org.example.inventorymanagersystemspring.service.TransactionService;
 
 import java.util.List;
 

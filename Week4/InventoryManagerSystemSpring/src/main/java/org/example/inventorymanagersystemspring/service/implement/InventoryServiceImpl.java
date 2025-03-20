@@ -1,14 +1,15 @@
 package org.example.inventorymanagersystemspring.service.implement;
 
-import models.InventoryItem;
-import models.ItemCategory;
-import repository.InventoryItemRepository;
-import service.InventoryService;
+import org.example.inventorymanagersystemspring.models.InventoryItem;
+import org.example.inventorymanagersystemspring.models.ItemCategory;
+import org.example.inventorymanagersystemspring.repository.InventoryItemRepository;
+import org.example.inventorymanagersystemspring.service.InventoryService;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
-
+@Service
 public class InventoryServiceImpl implements InventoryService {
     private final InventoryItemRepository inventoryItemRepository;
 

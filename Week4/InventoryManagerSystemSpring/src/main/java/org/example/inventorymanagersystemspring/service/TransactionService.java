@@ -1,8 +1,8 @@
 package org.example.inventorymanagersystemspring.service;
 
-import models.ClubMember;
-import models.InventoryItem;
-import models.Transaction;
+import org.example.inventorymanagersystemspring.models.ClubMember;
+import org.example.inventorymanagersystemspring.models.InventoryItem;
+import org.example.inventorymanagersystemspring.models.Transaction;
 
 import java.util.List;
 

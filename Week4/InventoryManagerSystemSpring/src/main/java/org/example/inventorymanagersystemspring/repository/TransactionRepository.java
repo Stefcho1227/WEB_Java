@@ -1,6 +1,6 @@
 package org.example.inventorymanagersystemspring.repository;
 
-import models.Transaction;
+import org.example.inventorymanagersystemspring.models.Transaction;
 
 import java.util.HashMap;
 import java.util.List;

@@ -16,9 +16,14 @@ java {
 repositories {
     mavenCentral()
 }
+ext {
+    lombokVersion = '1.18.36'
+}
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter'
+    compileOnly "org.projectlombok:lombok:${lombokVersion}"
+    annotationProcessor "org.projectlombok:lombok:${lombokVersion}"
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
