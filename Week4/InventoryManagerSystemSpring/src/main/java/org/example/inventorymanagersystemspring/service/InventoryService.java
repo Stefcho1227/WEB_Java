@@ -10,6 +10,7 @@ public interface InventoryService {
     void addItem(String name, String description, int quantity, String unit, ItemCategory category,
                  boolean borrowable, String serialNumber);
     List<InventoryItem> getLowStockItems(int threshold);
-    public boolean updateItem(Integer id, String name, String description, int quantity,
+    boolean updateItem(Integer id, String name, String description, int quantity,
                               ItemCategory category, boolean borrowable, String serialNumber);
+    boolean deleteItemById(Integer id);
 }

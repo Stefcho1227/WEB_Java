@@ -1,12 +1,13 @@
 package org.example.inventorymanagersystemspring.repository;
 
 import org.example.inventorymanagersystemspring.models.ClubMember;
+import org.springframework.stereotype.Repository;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
-
+@Repository
 public class ClubMemberRepository {
     private static Map<Integer, ClubMember> itemTable = new HashMap<>();
     public void addMember(ClubMember member) {

@@ -1,12 +1,13 @@
 package org.example.inventorymanagersystemspring.repository;
 
 import org.example.inventorymanagersystemspring.models.Transaction;
+import org.springframework.stereotype.Repository;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
-
+@Repository
 public class TransactionRepository {
     private static Map<Integer, Transaction> itemTable = new HashMap<>();
     public void addTransaction(Transaction transaction) {

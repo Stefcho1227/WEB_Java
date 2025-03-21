@@ -51,4 +51,9 @@ public class InventoryServiceImpl implements InventoryService {
         }
         return false;
     }
+
+    @Override
+    public boolean deleteItemById(Integer id) {
+        return inventoryItemRepository.deleteItemById(id);
+    }
 }

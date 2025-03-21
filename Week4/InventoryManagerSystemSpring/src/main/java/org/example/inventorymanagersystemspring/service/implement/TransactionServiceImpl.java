@@ -5,11 +5,12 @@ import org.example.inventorymanagersystemspring.models.InventoryItem;
 import org.example.inventorymanagersystemspring.models.Transaction;
 import org.example.inventorymanagersystemspring.repository.TransactionRepository;
 import org.example.inventorymanagersystemspring.service.TransactionService;
+import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.List;
 import java.util.stream.Collectors;
-
+@Service
 public class TransactionServiceImpl implements TransactionService {
     private final TransactionRepository transactionRepository;
 
@@ -23,6 +24,11 @@ public class TransactionServiceImpl implements TransactionService {
         LocalDate dueDate = borrowDate.plusDays(days);
         Transaction transaction = new Transaction(member, item, borrowDate, dueDate, false);
         transactionRepository.addTransaction(transaction);
+    }
+
+    @Override
+    public boolean deleteTransactionById(Integer id) {
+        return transactionRepository.deleteTransactionById(id);
     }
 
     @Override
