@@ -45,22 +45,22 @@ public class InventoryManagerSystemSpringApplication implements CommandLineRunne
         log.info("---------------------------------------");
 
         // Display All Items
-        System.out.println("📌 Displaying all inventory items:");
+        log.info("📌 Displaying all inventory items:");
         inventoryController.displayAllItems();
-        System.out.println("---------------------------------------");
+        log.info("---------------------------------------");
 
-        System.out.println("🔄 Updating 'RC Car' quantity to 8...");
+        log.info("🔄 Updating 'RC Car' quantity to 8...");
         inventoryController.updateItem(1, "RC Car", "High-speed remote control car", 12, itemCategory1, true, "S1233");
 
-        System.out.println("---------------------------------------");
-        System.out.println("📌 Displaying updated inventory items:");
+        log.info("---------------------------------------");
+        log.info("📌 Displaying updated inventory items:");
         inventoryController.displayAllItems();
 
-        System.out.println("---------------------------------------");
-        System.out.println("📌 Displaying all low stock items:");
+        log.info("---------------------------------------");
+        log.info("📌 Displaying all low stock items:");
         int threshold = 10;
         List<InventoryItem> lowCost = inventoryController.getLowStockItems(threshold);
         lowCost.stream().forEach(System.out::println);
-        System.out.println("---------------------------------------");
+        log.info("---------------------------------------");
     }
 }
