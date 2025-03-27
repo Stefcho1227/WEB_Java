@@ -26,7 +26,7 @@ public class InventoryManagerSystemSpringApplication implements CommandLineRunne
 
     @Override
     public void run(String... args) throws Exception {
-        log.info("🚀 Application started successfully!");
+        //log.info("🚀 Application started successfully!");
         ItemCategory itemCategory1 = new ItemCategory("Vehicles", "Very important car part");
         ItemCategory itemCategory2 = new ItemCategory("Accessories", "In case the old battery should be changed");
         // Add Inventory Items
