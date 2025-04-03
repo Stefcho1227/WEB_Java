@@ -14,6 +14,10 @@ public class InventoryItem {
     private Boolean borrowable;
     private LocalDate date;
 
+    public InventoryItem() {
+        id = idIncrement++;
+    }
+
     public InventoryItem(String name, String description, int quantity, String measurements,
                          ItemCategory category, Boolean borrowable, String serialNumber) {
         id = idIncrement++;

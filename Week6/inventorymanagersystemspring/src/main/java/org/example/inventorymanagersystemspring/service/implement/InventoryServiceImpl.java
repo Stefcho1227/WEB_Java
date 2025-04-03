@@ -23,6 +23,11 @@ public class InventoryServiceImpl implements InventoryService {
     }
 
     @Override
+    public InventoryItem getItemById(int id) {
+        return inventoryItemRepository.getItemById(id).orElseThrow();
+    }
+
+    @Override
     public void addItem(String name, String description, int quantity, String unit, ItemCategory category,
                         boolean borrowable, String serialNumber) {
         InventoryItem item = new InventoryItem(name, description, quantity, unit, category, borrowable, serialNumber);
