@@ -4,7 +4,6 @@ import java.time.LocalDate;
 
 public class InventoryItem {
     private static int idIncrement = 1;
-    //private static String serialNumberIncrement = "ABC000%d";
     private int id;
     private String name;
     private String description;
