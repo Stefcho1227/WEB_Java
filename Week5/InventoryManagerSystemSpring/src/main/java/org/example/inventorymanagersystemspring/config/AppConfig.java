@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Profile;
 
 @Configuration
 public class AppConfig {
-    @Value("${config.logger.level:INFO}")
+    @Value("${config.logger.level}")
     private String level;
     @Bean
     @Profile("local")

@@ -4,7 +4,6 @@ import org.example.inventorymanagersystemspring.models.InventoryItem;
 import org.example.inventorymanagersystemspring.models.ItemCategory;
 import org.example.inventorymanagersystemspring.repository.InventoryItemRepository;
 import org.example.inventorymanagersystemspring.service.InventoryService;
-import org.example.inventorymanagersystemspring.service.logger.Logger;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -13,10 +12,9 @@ import java.util.stream.Collectors;
 @Service
 public class InventoryServiceImpl implements InventoryService {
     private final InventoryItemRepository inventoryItemRepository;
-    private final Logger logger;
-    public InventoryServiceImpl(InventoryItemRepository inventoryItemRepository, Logger logger) {
+
+    public InventoryServiceImpl(InventoryItemRepository inventoryItemRepository) {
         this.inventoryItemRepository = inventoryItemRepository;
-        this.logger = logger;
     }
 
     @Override
@@ -29,13 +27,11 @@ public class InventoryServiceImpl implements InventoryService {
                         boolean borrowable, String serialNumber) {
         InventoryItem item = new InventoryItem(name, description, quantity, unit, category, borrowable, serialNumber);
         inventoryItemRepository.addItem(item);
-        logger.debug("added item");
     }
 
     @Override
     public List<InventoryItem> getLowStockItems(int threshold) {
         List<InventoryItem> items = inventoryItemRepository.getAllItems();
-        logger.info("get all low stock items");
         return items.stream().filter(i -> i.getQuantity() < threshold).collect(Collectors.toList());
     }
 
@@ -51,7 +47,6 @@ public class InventoryServiceImpl implements InventoryService {
             item.setCategory(category);
             item.setBorrowable(borrowable);
             item.setSerialNumber(serialNumber);
-            logger.debug("updated item");
             return inventoryItemRepository.updateItem(item);
         }
         return false;
